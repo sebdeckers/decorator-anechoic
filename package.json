@@ -1,0 +1,30 @@
+{
+  "name": "anechoic",
+  "version": "1.0.0",
+  "description": "Ignore repeated calls with the same arguments to a function.",
+  "main": "lib/anechoic.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cbas/decorator-anechoic.git"
+  },
+  "keywords": [
+    "decorator",
+    "ecmascript",
+    "anechoic",
+    "debounce",
+    "throttle",
+    "function"
+  ],
+  "author": "Sebastiaan Deckers <seb@ninja.sg>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cbas/decorator-anechoic/issues"
+  },
+  "homepage": "https://github.com/cbas/decorator-anechoic#readme",
+  "standard": {
+    "parser": "babel-eslint"
+  }
+}
