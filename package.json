@@ -26,5 +26,8 @@
   "homepage": "https://github.com/cbas/decorator-anechoic#readme",
   "standard": {
     "parser": "babel-eslint"
+  },
+  "dependencies": {
+    "lodash.isequal": "^3.0.4"
   }
 }
