@@ -2,7 +2,7 @@
   "name": "anechoic",
   "version": "1.0.0",
   "description": "Ignore repeated calls with the same arguments to a function.",
-  "main": "lib/anechoic.js",
+  "main": "dist",
   "scripts": {
     "test": "mocha"
   },
@@ -29,5 +29,18 @@
   },
   "dependencies": {
     "lodash.isequal": "^3.0.4"
+  },
+  "scripts": {
+    "start": "npm run start-audit & npm run start-tdd",
+    "start-audit": "watch-spawn --initial --quiet --pattern 'package.json' npm run test-audit",
+    "start-tdd": "watch-spawn --initial --quiet --pattern '{lib,test}/**/*.js' npm run test-tdd",
+    "test": "npm run test-audit & npm run test-tdd",
+    "test-audit": "node-license-validator",
+    "test-tdd": "standard & npm run coverage",
+    "coverage": "babel-node node_modules/.bin/isparta cover node_modules/.bin/_mocha",
+    "prepublish": "npm run clean && npm test && npm run build",
+    "clean": "rimraf dist",
+    "build": "mkdirp dist && babel lib --out-file dist/index.js",
+    "codecov": "cat coverage/coverage.json | codecov"
   }
 }
